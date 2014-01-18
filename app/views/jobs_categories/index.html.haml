@@ -1,0 +1,17 @@
+%h1 Listing jobs_categories
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @jobs_categories.each do |jobs_category|
+    %tr
+      %td= link_to 'Show', jobs_category
+      %td= link_to 'Edit', edit_jobs_category_path(jobs_category)
+      %td= link_to 'Destroy', jobs_category, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Jobs category', new_jobs_category_path
