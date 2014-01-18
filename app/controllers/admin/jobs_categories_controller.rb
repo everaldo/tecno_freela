@@ -1,4 +1,4 @@
-class JobsCategoriesController < ApplicationController
+class Admin::JobsCategoriesController < Admin::AdminController
   before_action :set_jobs_category, only: [:show, :edit, :update, :destroy]
 
   # GET /jobs_categories

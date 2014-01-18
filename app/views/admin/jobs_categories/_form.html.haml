@@ -1,4 +1,4 @@
-= form_for @jobs_category do |f|
+= form_for [:admin, @jobs_category] do |f|
   - if @jobs_category.errors.any?
     #error_explanation
       %h2= "#{pluralize(@jobs_category.errors.count, "error")} prohibited this jobs_category from being saved:"
