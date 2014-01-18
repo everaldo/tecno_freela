@@ -1,11 +1,13 @@
 TecnoFreela::Application.routes.draw do
+  
   resources :jobs
 
   root "home#index"
-  resources :jobs_categories
 
   namespace :admin do
     root "dashboard#index"
+    resources :jobs
+    resources :jobs_categories
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
