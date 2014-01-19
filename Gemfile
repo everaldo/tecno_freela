@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 ruby  "2.0.0"
 gem   "rails", "4.0.2"
-gem   "sqlite3"
 gem   "cancan"
 gem   "devise"
 gem   "figaro"
@@ -37,7 +36,7 @@ end
 group :test do
   gem "factory_girl_rails"
   gem "rspec-rails"
-  gem "guard-rpsec"
+  gem "guard-rspec"
 end
 group :production do
   gem 'unicorn'
