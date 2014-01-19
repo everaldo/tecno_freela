@@ -28,11 +28,11 @@ class Admin::JobsController < Admin::AdminController
 
     respond_to do |format|
       if @job.save
-        format.html { redirect_to @job, notice: 'Job was successfully created.' }
+        format.html { redirect_to [:admin, @job], notice: 'Job was successfully created.' }
         format.json { render action: 'show', status: :created, location: @job }
       else
         format.html { render action: 'new' }
-        format.json { render json: @job.errors, status: :unprocessable_entity }
+        format.json { render json: [:admin, @job.errors], status: :unprocessable_entity }
       end
     end
   end
@@ -42,11 +42,11 @@ class Admin::JobsController < Admin::AdminController
   def update
     respond_to do |format|
       if @job.update(job_params)
-        format.html { redirect_to @job, notice: 'Job was successfully updated.' }
+        format.html { redirect_to [:admin, @job], notice: 'Job was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @job.errors, status: :unprocessable_entity }
+        format.json { render json: [:admin, @job.errors], status: :unprocessable_entity }
       end
     end
   end
@@ -56,7 +56,7 @@ class Admin::JobsController < Admin::AdminController
   def destroy
     @job.destroy
     respond_to do |format|
-      format.html { redirect_to jobs_url }
+      format.html { redirect_to admin_jobs_url }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class Admin::JobsController < Admin::AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params[:job]
+      params[:admin_job]
     end
 end
