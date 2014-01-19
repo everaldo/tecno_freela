@@ -1,0 +1,26 @@
+.page-header
+  %h1 Listing jobs
+
+%table.table.table-striped
+  %tr
+    %th Job Id
+    %th Job Name
+    %th Job Category
+    %th Created At
+    %th Actions
+
+  - @jobs.each do |job|
+    %tr
+      %td= job.id
+      %td= job.job_name
+      %td= job.jobs_category
+      %td= job.created_at
+      %td
+        .btn-group.btn-group-sm
+          = link_to 'Show', job, class: 'btn btn-default'
+          = link_to 'Edit', edit_admin_job_path(job), class: 'btn btn-default'
+          = link_to 'Destroy', [:admin,job], :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-default'
+
+%br
+
+= link_to 'New Job', new_admin_job_path, class: 'btn btn-primary'
