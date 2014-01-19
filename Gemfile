@@ -7,7 +7,7 @@ gem   'devise'
 gem   'figaro'
 gem   'haml-rails'
 gem   'bootstrap-wysihtml5-rails'
-gem   'mongoid',              github: 'mongoid/mongoid'
+gem   'mongoid', github: 'mongoid/mongoid'
 gem   'carrierwave-mongoid', require: 'carrierwave/mongoid'
 gem   'rolify'
 gem   'simple_form'
@@ -37,9 +37,9 @@ group :development do
 end
 
 group :test do
-  gem 'factory_girl_rails'
-  gem 'rspec-rails'
-  gem 'guard-rpsec'
+  gem "factory_girl_rails"
+  gem "rspec-rails"
+  gem "guard-rspec"
 end
 
 group :production do
