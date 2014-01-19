@@ -1,5 +1,7 @@
 TecnoFreela::Application.routes.draw do
   
+  resources :companies
+
   resources :jobs, only: [:show]
 
   root "home#index"
