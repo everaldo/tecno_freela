@@ -4,12 +4,11 @@
 
 
 - @jobs.each do |job|
-  %h2= link_to job.job_name, job
-  = image_tag "http://placehold.it/200x120", class: 'img-thumbnail'
-  -#= image_tag job.company_logo, class: 'img-thumbnail'
-  %p= job.job_description
-  = job.jobs_category
-  = job.created_at
-  %hr
-  .btn-group.btn-group-sm
-    = link_to 'Show', job, class: 'btn btn-default'
+  .media
+    = image_tag "http://placehold.it/200x120", class: 'img-thumbnail pull-left'
+    -#= image_tag job.company_logo, class: 'img-thumbnail'
+    .media-body
+      %h3.media-heading= link_to job.job_name, job
+      %p= job.job_description
+      = job.jobs_category
+      = job.created_at
