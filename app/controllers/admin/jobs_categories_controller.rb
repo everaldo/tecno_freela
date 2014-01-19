@@ -42,11 +42,11 @@ class Admin::JobsCategoriesController < Admin::AdminController
   def update
     respond_to do |format|
       if @jobs_category.update(jobs_category_params)
-        format.html { redirect_to @jobs_category, notice: 'Jobs category was successfully updated.' }
+        format.html { redirect_to [:admin, @jobs_category], notice: 'Jobs category was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @jobs_category.errors, status: :unprocessable_entity }
+        format.json { render json: [:admin, @jobs_category.errors], status: :unprocessable_entity }
       end
     end
   end

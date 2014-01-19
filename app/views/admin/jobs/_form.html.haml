@@ -7,6 +7,6 @@
           %li= msg
 
   = f.input :job_name
-  = f.association :jobs_category
+  = f.association :jobs_category, label_method: :category_name , prompt: "Choose a Category"
   .actions
     = f.submit 'Save'
