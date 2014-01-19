@@ -5,4 +5,5 @@ class Job
   #Database
   field :job_name, type: String
   field :job_description, type: String
+  field :job_apply, type: String
 end
