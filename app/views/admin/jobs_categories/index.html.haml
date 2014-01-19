@@ -1,18 +1,20 @@
-%h1 Listing jobs_categories
+%h1 Listing Jobs Categories
 
-%table
+%table.table.table-striped
   %tr
-    %th
-    %th
-    %th
+    %th Category Id
+    %th Category Name
+    %th Actions
 
   - @jobs_categories.each do |jobs_category|
     %tr
       %td= jobs_category.id
       %td= jobs_category.category_name
-      %td= link_to 'Show', [:admin,jobs_category]
-      %td= link_to 'Edit', edit_admin_jobs_category_path(jobs_category)
-      %td= link_to 'Destroy', [:admin,jobs_category], :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td
+        .btn-group.btn-group-sm
+          = link_to 'Show', [:admin,jobs_category], class: 'btn btn-default'
+          = link_to 'Edit', edit_admin_jobs_category_path(jobs_category), class: 'btn btn-default'
+          = link_to 'Destroy', [:admin,jobs_category], :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-default'
 
 %br
 
