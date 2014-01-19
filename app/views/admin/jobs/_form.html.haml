@@ -4,7 +4,8 @@
   .form-inputs
     = f.input :job_name
     = f.association :jobs_category, label_method: :category_name , prompt: "Choose a Category"
-    = f.input :job_description,as: :text, input_html:{class: 'wysihtml5'}
+    = f.input :job_description,as: :text, input_html:{class: 'wysihtml5',rows:'10'}
+    = f.input :job_apply, as: :text, input_html:{class:'wysihtml5',rows:'6'}
   .form-actions
     = f.button :submit
 
