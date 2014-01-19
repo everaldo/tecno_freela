@@ -46,6 +46,7 @@ gem 'cancan'
 gem 'devise'
 gem 'figaro'
 gem 'haml-rails'
+gem 'bootstrap-wysihtml5-rails'
 gem 'mongoid', :github=>"mongoid/mongoid"
 gem 'rolify'
 gem 'simple_form'

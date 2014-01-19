@@ -1,12 +1,18 @@
 = simple_form_for [:admin, @job] do |f|
-  - if @job.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@job.errors.count, "error")} prohibited this job from being saved:"
-      %ul
-        - @job.errors.full_messages.each do |msg|
-          %li= msg
+  = f.error_notification
 
-  = f.input :job_name
-  = f.association :jobs_category, label_method: :category_name , prompt: "Choose a Category"
-  .actions
-    = f.submit 'Save'
+  .form-inputs
+    = f.input :job_name
+    = f.association :jobs_category, label_method: :category_name , prompt: "Choose a Category"
+    = f.input :job_description,as: :text, input_html:{class: 'wysihtml5'}
+  .form-actions
+    = f.button :submit
+
+:javascript
+  $(document).ready(function(){
+
+    $('.wysihtml5').each(function(i, elem) {
+      $(elem).wysihtml5();
+    });
+
+  })
