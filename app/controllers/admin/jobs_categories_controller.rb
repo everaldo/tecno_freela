@@ -28,11 +28,11 @@ class Admin::JobsCategoriesController < Admin::AdminController
 
     respond_to do |format|
       if @jobs_category.save
-        format.html { redirect_to @jobs_category, notice: 'Jobs category was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @jobs_category }
+        format.html { redirect_to [:admin, @jobs_category], notice: 'Jobs category was successfully created.' }
+        format.json { render action: 'show', status: :created, location: [:admin, @jobs_category] }
       else
         format.html { render action: 'new' }
-        format.json { render json: @jobs_category.errors, status: :unprocessable_entity }
+        format.json { render json: [:admin, @jobs_category.errors], status: :unprocessable_entity }
       end
     end
   end
@@ -56,7 +56,7 @@ class Admin::JobsCategoriesController < Admin::AdminController
   def destroy
     @jobs_category.destroy
     respond_to do |format|
-      format.html { redirect_to jobs_categories_url }
+      format.html { redirect_to admin_jobs_categories_url }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class Admin::JobsCategoriesController < Admin::AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def jobs_category_params
-      params[:jobs_category]
+      params[:admin_jobs_category]
     end
 end

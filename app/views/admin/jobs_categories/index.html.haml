@@ -8,9 +8,9 @@
 
   - @jobs_categories.each do |jobs_category|
     %tr
-      %td= link_to 'Show', jobs_category
+      %td= link_to 'Show', [:admin,jobs_category]
       %td= link_to 'Edit', edit_admin_jobs_category_path(jobs_category)
-      %td= link_to 'Destroy', jobs_category, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to 'Destroy', [:admin,jobs_category], :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
