@@ -1,5 +1,5 @@
-class JobsController < AplicationController
-  before_action :set_job, only: [:show, :edit, :update, :destroy]
+class JobsController < ApplicationController
+  before_action :set_job, only: [:show]
 
   # GET /jobs
   # GET /jobs.json
@@ -17,10 +17,6 @@ class JobsController < AplicationController
     @job = Job.new
   end
 
-  # GET /jobs/1/edit
-  def edit
-  end
-
   # POST /jobs
   # POST /jobs.json
   def create
@@ -34,30 +30,6 @@ class JobsController < AplicationController
         format.html { render action: 'new' }
         format.json { render json: [:admin, @job.errors], status: :unprocessable_entity }
       end
-    end
-  end
-
-  # PATCH/PUT /jobs/1
-  # PATCH/PUT /jobs/1.json
-  def update
-    respond_to do |format|
-      if @job.update(job_params)
-        format.html { redirect_to [:admin, @job], notice: 'Job was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: [:admin, @job.errors], status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /jobs/1
-  # DELETE /jobs/1.json
-  def destroy
-    @job.destroy
-    respond_to do |format|
-      format.html { redirect_to admin_jobs_url }
-      format.json { head :no_content }
     end
   end
 

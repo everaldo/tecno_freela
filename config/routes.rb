@@ -1,6 +1,6 @@
 TecnoFreela::Application.routes.draw do
   
-  resources :jobs, only: [:show]
+  resources :jobs, except: [:edit, :update, :destroy]
 
   root "home#index"
 
