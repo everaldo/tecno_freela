@@ -1,0 +1,5 @@
+%ul.list-group
+  - JobsCategory.all.each do |cat|
+    %li.list-group-item
+      = link_to cat.category_name
+      %span.badge= cat.jobs.count

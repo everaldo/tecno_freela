@@ -1,14 +1,16 @@
 .page-header
   %h1 Listing jobs
 
-
-
-- @jobs.each do |job|
-  .media
-    = image_tag "http://placehold.it/200x120", class: 'img-thumbnail pull-left'
-    -#= image_tag job.company_logo, class: 'img-thumbnail'
-    .media-body
-      %h3.media-heading= link_to job.job_name, job
-      %p= job.job_description
-      = job.jobs_category
-      = job.created_at
+.row
+  .col-lg-9
+    - @jobs.each do |job|
+      .media
+        = image_tag "http://placehold.it/200x120", class: 'img-thumbnail pull-left'
+        -#= image_tag job.company_logo, class: 'img-thumbnail'
+        .media-body
+          %h3.media-heading= link_to job.job_name, job
+          %p= job.job_description
+          = job.jobs_category
+          = job.created_at
+  .col-lg-3
+    = render 'sidebar'
