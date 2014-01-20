@@ -12,6 +12,7 @@ gem   'carrierwave-mongoid', require: 'carrierwave/mongoid'
 gem   'rolify'
 gem   'simple_form'
 gem   'rmagick'
+gem   "geocoder"
 
 group :assets do
   # Use SCSS for stylesheets
@@ -31,15 +32,16 @@ group :assets do
 end
 
 group :development do
-  gem 'pry-debugger'
-  gem 'better_errors'
-  gem 'binding_of_caller'
+  gem "pry-debugger"
+  gem "pry-rails"
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 group :test do
-  gem "factory_girl_rails"
   gem "rspec-rails"
   gem "guard-rspec"
+  gem "factory_girl_rails"
 end
 
 group :production do
