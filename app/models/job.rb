@@ -1,6 +1,12 @@
 class Job
   include Mongoid::Document
   include Mongoid::Timestamps
+  
+  #Uploader
+  
+  mount_uploader :company_logo, CompanyLogoUploader
+
+  #Relationships
   belongs_to :jobs_category
 
   #Database

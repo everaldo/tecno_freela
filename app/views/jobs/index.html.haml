@@ -5,8 +5,8 @@
   .col-lg-9
     - @jobs.each do |job|
       .media
-        = image_tag "http://placehold.it/200x120", class: 'img-thumbnail pull-left'
-        -#= image_tag job.company_logo, class: 'img-thumbnail'
+        -#= image_tag "http://placehold.it/200x120", class: 'img-thumbnail pull-left'
+        = image_tag job.company_logo, class: 'img-thumbnail pull-left'
         .media-body
           %h3.media-heading= link_to job.job_name, job
           %p= job.job_description

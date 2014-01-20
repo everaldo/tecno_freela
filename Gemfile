@@ -52,6 +52,8 @@ gem 'rolify'
 gem 'simple_form'
 gem 'unicorn'
 gem 'unicorn-rails'
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'rmagick'
 
 group :development do
   gem 'better_errors'
