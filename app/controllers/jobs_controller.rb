@@ -24,11 +24,11 @@ class JobsController < ApplicationController
 
     respond_to do |format|
       if @job.save
-        format.html { redirect_to [:admin, @job], notice: 'Job was successfully created.' }
+        format.html { redirect_to @job, notice: 'Job was successfully created.' }
         format.json { render action: 'show', status: :created, location: @job }
       else
         format.html { render action: 'new' }
-        format.json { render json: [:admin, @job.errors], status: :unprocessable_entity }
+        format.json { render json: @job.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -41,6 +41,6 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:job_name, :job_description, :job_apply, :jobs_category)
+      params.require(:job).permit(:job_name, :job_description, :job_apply, :jobs_category,:company_logo)
     end
 end
