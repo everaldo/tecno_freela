@@ -11,7 +11,7 @@ gem   "bootstrap-wysihtml5-rails"
 gem   "mongoid", github: "mongoid/mongoid"
 gem   "rolify"
 gem   "simple_form"
-
+gem   "geocoder"
 group :assets do
   # Use SCSS for stylesheets
   gem 'sass-rails', '~> 4.0.0'
@@ -30,13 +30,16 @@ group :assets do
 end
 group :development do
   gem "pry-debugger"
+  gem "pry-rails"
   gem "better_errors"
   gem "binding_of_caller"
 end
 group :test do
-  gem "factory_girl_rails"
   gem "rspec-rails"
   gem "guard-rspec"
+end
+group :development, :test do
+  gem "factory_girl_rails"
 end
 group :production do
   gem 'unicorn'
