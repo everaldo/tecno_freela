@@ -131,6 +131,9 @@ GEM
     method_source (0.8.2)
     mime-types (1.25.1)
     minitest (4.7.5)
+    mongoid_taggable (1.1.1)
+      mongoid (>= 3)
+      rake
     moped (2.0.0.beta5)
       bson (~> 2.1)
       connection_pool (~> 1.2)
@@ -253,6 +256,7 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   mongoid!
+  mongoid_taggable
   pry-debugger
   pry-rails
   rails (= 4.0.2)

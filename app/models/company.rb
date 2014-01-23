@@ -5,15 +5,14 @@ class Company
 
   mount_uploader :logo, CompanyLogoUploader
 
-  has_many :jobs
+  has_many :jobs, dependent: :delete
 
   field :name,        type: String
   field :url,         type: String
   field :logo,        type: String
   field :email,       type: String
   field :address,     type: String
-  field :coordinates, type: Array
-  field :highlight,   type: Boolean
+  field :coordinates, type: Array  # Need run `rake db:mongoid:create_indexes`
 
   geocoded_by       :address
   after_validation  :geocode
