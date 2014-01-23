@@ -30,13 +30,16 @@ group :assets do
   gem 'turbolinks'
   gem 'bootstrap-sass', '>= 3.0.0.0'
   gem 'bootstrap-wysihtml5-rails'
+  gem 'html2haml'
+  gem 'quiet_assets'
+  gem 'rails_layout'
 end
 
 group :development do
   gem 'pry-debugger'
   gem 'pry-rails'
   gem 'better_errors'
-  gem 'binding_of_caller'
+  gem 'binding_of_caller', platforms: [:mri_19, :mri_20, :rbx]
 end
 
 group :test do
