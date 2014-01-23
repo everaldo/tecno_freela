@@ -1,5 +1,5 @@
 # Tecno Freela
-Este projeto tem cunho didático da comunidade "rails-br" e tem como objetivo ser um clone básico do site [We Work Remotely](https://weworkremotely.com/).
+Este projeto tem cunho didático da comunidade "rails-br" e "tecnobest" e tem como objetivo ser um clone básico do site [We Work Remotely](https://weworkremotely.com/).
 
 ## Como contribuir como desenvolvedor
 
