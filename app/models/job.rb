@@ -20,6 +20,7 @@ class Job
   #Database
   field :name,        type: String
   field :description, type: String
+  field :description, type: String
   field :apply,       type: String
   field :address,     type: String
   field :coordinates, type: Array
