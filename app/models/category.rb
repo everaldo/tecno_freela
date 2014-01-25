@@ -1,12 +1,13 @@
-class JobsCategory
+class Category
   include Mongoid::Document
   include Mongoid::Timestamps
 
   #Validations
-  validates :category_name, presence: true
+  validates :name, presence: true
+
   #Relationships
   has_many :jobs
 
   #Database
-  field :category_name, type: String
+  field :name, type: String
 end
