@@ -1,21 +1,18 @@
 class Job
   include Mongoid::Document
   include Mongoid::Timestamps
-  
-  #Uploader
-  
-  mount_uploader :company_logo, CompanyLogoUploader
+  include Mongoid::Taggable
 
   #Relationships
-  belongs_to :jobs_category
+  belongs_to :category
+  belongs_to :company # Ou contractor
+
+  validates :name, presence: true
 
   #Database
-  field :job_name, type: String
-  field :job_description, type: String
-  field :job_apply, type: String
-  field :company_location, type: String
-  field :company_name, type: String
-  field :company_url, type: String
-  field :company_logo, type: String
-  field :company_email, type: String
+  field :name,        type: String
+  field :description, type: String
+  field :apply,       type: String
+  field :highlight,   type: Boolean, default: false
+  # tags_separator ','
 end
