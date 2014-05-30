@@ -1,8 +1,8 @@
 TecnoFreela::Application.routes.draw do
-  
   resources :jobs, except: [:edit, :update, :destroy]
 
   root "home#index"
+  devise_for :users
 
   namespace :admin do
     root "dashboard#index"
