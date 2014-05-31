@@ -10,7 +10,7 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 # Checks for pending migrations before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
-ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
+# ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
 RSpec.configure do |config|
   # ## Mock Framework
@@ -40,4 +40,19 @@ RSpec.configure do |config|
 
   config.include FactoryGirl::Syntax::Methods
   config.color_enabled = true
+
+  # Cleanup the DB in between test runs
+  config.before(:suite) do
+    DatabaseCleaner[:mongoid].strategy = :truncation
+    DatabaseCleaner[:mongoid].clean_with(:truncation)
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.start
+    #  Mongoid.purge!
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
 end
