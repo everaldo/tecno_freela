@@ -4,7 +4,7 @@ Este projeto tem cunho didático da organização/startup "tecnobest" e tem como
 ## Como contribuir como desenvolvedor
 
 ### Baixando o projeto e contribuindo no github
-O projeto usar o controle de versão [GIT-SCM](http://git-scm.com) e se caso voc6e ainda não conhece muito de GIT recomendamos que [assista esse tutorial completo](http://goo.gl/bLCO43) feito pelo [Fábio Akita](http://akitaonrails.com.br/).
+O projeto usa o controle de versão [GIT-SCM](http://git-scm.com) e se caso você ainda não conhece muito de GIT recomendamos que [assista esse tutorial completo](http://goo.gl/bLCO43) feito pelo [Fábio Akita](http://akitaonrails.com.br/).
 
 - Faça o fork do projeto para sua conta do github.
 - Planeje a sua feature e implemente em um feature branch, o seu feature branch deve conter ser branch com o nome da sua fuature e deve implementar os devidos testes.
