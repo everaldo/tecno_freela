@@ -40,6 +40,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Rails Html Sanitizer for HTML sanitization
 gem 'rails-html-sanitizer', '~> 1.0'
 
+gem 'mina'
+gem 'mina-scp', require: false
+
 
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console
