@@ -22,7 +22,7 @@ gem   'therubyracer', platforms: :ruby
 gem   'jquery-rails'
 gem   'turbolinks'
 gem   'bootstrap-wysihtml5-rails'
-gem   'bootstrap-sass', '>= 3.0.0.0'
+gem   'bootstrap-sass', '>= 3.2.0.1'
 gem   'html2haml'
 gem   'quiet_assets'
 gem   'rails_layout'
