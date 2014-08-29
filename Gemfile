@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby  '2.0.0'
+ruby  '2.1.2'
 gem   'rails', '4.0.2'
 gem   'cancan'
 gem   'devise'
@@ -27,7 +27,7 @@ gem   'rails_layout'
 
 
 group :development do
-  gem 'pry-debugger'
+  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller', platforms: [:mri_19, :mri_20, :rbx]
