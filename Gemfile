@@ -26,6 +26,9 @@ gem   'bootstrap-sass', '>= 3.2.0.1'
 gem   'html2haml'
 gem   'quiet_assets'
 gem   'rails_layout'
+gem 'mina'
+gem 'mina-scp', require: false
+
 
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
