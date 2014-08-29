@@ -22,12 +22,14 @@ gem   'therubyracer', platforms: :ruby
 gem   'jquery-rails'
 gem   'turbolinks'
 gem   'bootstrap-wysihtml5-rails'
-gem   'bootstrap-sass', '>= 3.2.0.1'
+#gem   'bootstrap-sass', '>= 3.2.0.1'
+# Temporary fix
+gem   'bootstrap-sass', github: 'everaldo/bootstrap-sass'
 gem   'html2haml'
 gem   'quiet_assets'
 gem   'rails_layout'
-gem 'mina'
-gem 'mina-scp', require: false
+gem   'mina'
+gem   'mina-scp', require: false
 
 
 gem 'jbuilder', '~> 2.0'
