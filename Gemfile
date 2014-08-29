@@ -29,6 +29,7 @@ gem   'rails_layout'
 
 
 group :development do
+  gem 'thin'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'better_errors'
