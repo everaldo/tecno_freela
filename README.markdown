@@ -10,6 +10,22 @@ O projeto usa o controle de versão [GIT-SCM](http://git-scm.com) e se caso voc�
 - Planeje a sua feature e implemente em um feature branch, o seu feature branch deve conter ser branch com o nome da sua fuature e deve implementar os devidos testes.
 - Feita a sua implementação de feature com todos os teste passando (todos testes verdinhos) envie um `Pull Request` para o projeto principal no tecnobest e aguarde o *Code Review*.
 
+## Setup do Projeto
+
+- Instale o Ruby, versão 2.1.2
+
+### Dependências
+
+- Image Magic
+
+```
+sudo apt-get update
+sudo apt-get install imagemagick libmagickcore-dev
+sudo apt-get install libmagickwand-dev
+```
+
+
+
 ### Como fazer o *code review* e workflow de aprovação para *Pull Requests*
 A metodologia de não aceitar os commits diretamente no repositório TecnoBest/teno_freela é exatamente melhorar a qualidade através do Code Review do código onde o avaliador pode observar o emprego de boas práticas e convenções ou ainda sugerir melhorias em algoritmos compatíveis com o uso comum do dia-a-dia.
 Para aprovação de um *Pull Request* o avaliador deve:
