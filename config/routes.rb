@@ -1,4 +1,4 @@
-TecnoFreela::Application.routes.draw do
+Rails.application.routes.draw do
   resources :jobs, except: [:edit, :update, :destroy]
 
   root "home#index"

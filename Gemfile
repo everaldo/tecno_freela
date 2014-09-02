@@ -1,9 +1,11 @@
 source 'https://rubygems.org'
 
-ruby  '2.0.0'
-gem   'rails', '4.0.2'
+ruby  '2.1.2'
+gem   'rails', '4.2.0.beta1'
 gem   'cancan'
-gem   'devise'
+#gem   'devise'
+# https://github.com/plataformatec/devise/pull/3153
+gem 'devise', git: 'https://github.com/plataformatec/devise.git', :branch => 'lm-rails-4-2'
 gem   'figaro'
 gem   'haml-rails'
 gem   'mongoid', github: 'mongoid/mongoid'
@@ -13,21 +15,46 @@ gem   'simple_form'
 gem   'rmagick'
 gem   'geocoder'
 gem   'mongoid_taggable'
-gem   'sass-rails', '~> 4.0.0'
+gem   'sass-rails', '~> 5.0.0.beta1'
 gem   'uglifier', '>= 1.3.0'
 gem   'coffee-rails', '~> 4.0.0'
 gem   'therubyracer', platforms: :ruby
 gem   'jquery-rails'
 gem   'turbolinks'
 gem   'bootstrap-wysihtml5-rails'
-gem   'bootstrap-sass', '>= 3.0.0.0'
+#gem   'bootstrap-sass', '>= 3.2.0.1'
+# Temporary fix
+gem   'bootstrap-sass', github: 'everaldo/bootstrap-sass'
 gem   'html2haml'
 gem   'quiet_assets'
 gem   'rails_layout'
+gem   'mina'
+gem   'mina-scp', require: false
 
 
-group :development do
-  gem 'pry-debugger'
+gem 'jbuilder', '~> 2.0'
+# bundle exec rake doc:rails generates the API under doc/api.
+gem 'sdoc', '~> 0.4.0', group: :doc
+
+# Use ActiveModel has_secure_password
+# gem 'bcrypt', '~> 3.1.7'
+
+# Use Rails Html Sanitizer for HTML sanitization
+gem 'rails-html-sanitizer', '~> 1.0'
+
+gem 'mina'
+gem 'mina-scp', require: false
+
+
+group :development, :test do
+  # Call 'debugger' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug'
+  # Access an IRB console on exceptions page and /console in development
+  gem 'web-console', '~> 2.0.0.beta2'
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
+  gem 'thin'
+  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller', platforms: [:mri_19, :mri_20, :rbx]

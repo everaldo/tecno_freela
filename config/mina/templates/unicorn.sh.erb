@@ -1,0 +1,82 @@
+#!/usr/bin/env bash
+set -e
+
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+
+AS_USER="<%= user %>"
+
+TIMEOUT=60
+APP_ROOT="<%= "#{deploy_to!}/#{current_path!}" %>"
+PID="<%= unicorn_pid %>"
+ENVIRONMENT="<%= rails_env %>"
+CONFIG="<%= unicorn_config %>"
+UARGS="-D -c $CONFIG -E $ENVIRONMENT"
+CMD="cd $APP_ROOT && $APP_ROOT/bin/unicorn_rails $UARGS"
+action="$1"
+#set -u
+
+
+cd $APP_ROOT || exit 1
+
+old_pid="$PID.oldbin"
+
+
+run () {
+  if [ "$(id -un)" = "$AS_USER" ]; then
+    eval $1
+  else
+    su -c "$1" - $AS_USER
+  fi
+}
+
+
+sig () {
+  test -s "$PID" && kill -$1 `cat $PID`
+}
+
+oldsig () {
+  test -s $old_pid && kill -$1 `cat $old_pid`
+}
+
+workersig () {
+  workerpid="$APP_ROOT/tmp/pids/unicorn.$2.pid"
+  test -s "$workerpid" && kill -$1 `cat $workerpid`
+}
+
+case $action in
+start)
+  sig 0 && echo >&2 "Already running" && exit 0
+  run "$CMD" && echo "start ok" && exit 0
+  ;;
+stop)
+  sig QUIT && echo "stop ok" && exit 0
+  echo >&2 "Not running"
+  ;;
+force-stop)
+  sig TERM && echo "force-stop ok" && exit 0
+  echo >&2 "Not running"
+  ;;
+restart|reload)
+  sig HUP && echo "reloaded OK" && exit 0
+  echo >&2 "Couldn't reload, starting '$CMD' instead"
+  run "$CMD"
+  ;;
+upgrade)
+  sig USR2 && echo Upgraded && exit 0
+  echo >&2 "Couldn't upgrade, starting '$CMD' instead"
+  run "$CMD"
+  ;;
+kill_worker)
+  workersig QUIT $2 && exit 0
+  echo >&2 "Worker not running"
+  ;;
+
+reopen-logs)
+  sig USR1
+  ;;
+*)
+  echo >&2 "Usage: $0 <start|stop|restart|upgrade|force-stop|reopen-logs>"
+  exit 1
+  ;;
+esac
+
