@@ -22,9 +22,7 @@ gem   'therubyracer', platforms: :ruby
 gem   'jquery-rails'
 gem   'turbolinks'
 gem   'bootstrap-wysihtml5-rails'
-#gem   'bootstrap-sass', '>= 3.2.0.1'
-# Temporary fix
-gem   'bootstrap-sass', github: 'everaldo/bootstrap-sass'
+gem   'bootstrap-sass', '>= 3.2.0.2'
 gem   'html2haml'
 gem   'quiet_assets'
 gem   'rails_layout'
@@ -41,9 +39,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Rails Html Sanitizer for HTML sanitization
 gem 'rails-html-sanitizer', '~> 1.0'
-
-gem 'mina'
-gem 'mina-scp', require: false
 
 
 group :development, :test do

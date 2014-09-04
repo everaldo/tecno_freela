@@ -1,11 +1,4 @@
 GIT
-  remote: git://github.com/everaldo/bootstrap-sass.git
-  revision: 21bff940bec205d641a818e08fce699810277d42
-  specs:
-    bootstrap-sass (3.2.0.1)
-      sass (~> 3.2)
-
-GIT
   remote: git://github.com/mongoid/mongoid.git
   revision: 4e3b39e9bbcf1b36d0472c6b09f8f394c55065f4
   specs:
@@ -73,6 +66,8 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.2.0.2)
+      sass (~> 3.2)
     bootstrap-wysihtml5-rails (0.3.2.100)
       railties (>= 3.0)
     bson (2.3.0)
@@ -347,7 +342,7 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   binding_of_caller
-  bootstrap-sass!
+  bootstrap-sass (>= 3.2.0.2)
   bootstrap-wysihtml5-rails
   byebug
   cancan
