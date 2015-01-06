@@ -1,6 +1,9 @@
 %p#notice= notice
 
+%h1= t('actions.show')
 
-= link_to 'Edit', edit_admin_category_path(@category)
+= show_attributes @category, :name, :created_at
+
+= link_to t('actions.edit'), edit_admin_category_path(@category)
 \|
-= link_to 'Back', admin_categories_path
+= link_to t('actions.back'), admin_categories_path

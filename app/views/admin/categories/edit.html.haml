@@ -1,7 +1,7 @@
-%h1 Editing category
+%h1= t('admin.categories.edit.title')
 
 = render 'form'
 
-= link_to 'Show', [:admin,@category]
+= link_to t('actions.show'), [:admin,@category]
 \|
-= link_to 'Back', admin_categories_path
+= link_to t('actions.back'), admin_categories_path
