@@ -3,7 +3,7 @@ class Category
   include Mongoid::Timestamps
 
   #Validations
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
 
   #Relationships
   has_many :jobs
