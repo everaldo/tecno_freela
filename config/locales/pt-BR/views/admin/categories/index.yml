@@ -1,0 +1,5 @@
+pt-BR:
+  admin:
+    categories:
+      title: Categorias
+      new: Nova categoria
