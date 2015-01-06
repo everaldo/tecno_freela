@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 ruby  '2.1.2'
-gem   'rails', '4.2.0.beta1'
+gem   'rails', '4.2.0'
 gem   'cancan'
 #gem   'devise'
 # https://github.com/plataformatec/devise/pull/3153
