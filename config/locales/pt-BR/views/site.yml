@@ -1,0 +1,10 @@
+pt-BR:
+  site:
+    title: 'TecnoFreela'
+  actions:
+    title: Ações
+    show: Detalhes
+    edit: Editar
+    destroy: Remover
+    confirm_destroy: Tem certeza?
+
